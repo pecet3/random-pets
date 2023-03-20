@@ -6,7 +6,7 @@ import { List } from "./List";
 
 export interface IData {
   person: {
-    name: string;
+    name?: string;
     age?: number;
   }[];
 }
@@ -14,18 +14,9 @@ function App() {
   const [count, setCount] = useState(0);
   const [input, setInput] = useState({
     name: "",
-    age: 2,
+    age: 0,
   });
-  const [personalData, setPersonalData] = useState<IData["person"]>([
-    {
-      name: "",
-      age: 2,
-    },
-    {
-      name: "",
-      age: 2,
-    },
-  ]);
+  const [personalData, setPersonalData] = useState<IData["person"]>([{}]);
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setInput({
@@ -35,17 +26,35 @@ function App() {
   };
 
   const onButtonClick = () => {
-    setPersonalData([...personalData, input]);
+    setPersonalData([
+      ...personalData,
+      typeof input.age !== "number"
+        ? {
+            name: input.name,
+            age: parseInt(input.age),
+          }
+        : {
+            name: input.name,
+            age: input.age,
+          },
+    ]);
   };
 
   useEffect(() => {
     console.log(personalData);
   }, [personalData]);
+
+  const onFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+  };
   return (
     <>
-      <form className="flex flex-col">
+      <form
+        className="container gap-1 justify-center flex flex-col"
+        onSubmit={onFormSubmit}
+      >
         <input
-          className="border-2 "
+          className="border-2 border-b-green text-gray-dark max-w-sm "
           type="text"
           value={input.name}
           name="name"
@@ -53,15 +62,21 @@ function App() {
           onChange={onInputChange}
         />
         <input
-          className="border-2 "
+          className="border-2 border-b-blue text-gray-dark max-w-sm"
           type="number"
           value={input.age}
           name="age"
           placeholder="Enter age"
           onChange={onInputChange}
         />
+        <button
+          onClick={onButtonClick}
+          className="border-2 border-b-pink w-20 text-lg p-1"
+        >
+          Submit
+        </button>
       </form>
-      <button onClick={onButtonClick}>Submit</button>
+
       <List />
     </>
   );
