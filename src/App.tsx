@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -14,8 +14,18 @@ function App() {
   const [count, setCount] = useState(0);
   const [input, setInput] = useState({
     name: "",
-    age: "",
+    age: 2,
   });
+  const [personalData, setPersonalData] = useState<IData["person"]>([
+    {
+      name: "",
+      age: 2,
+    },
+    {
+      name: "",
+      age: 2,
+    },
+  ]);
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setInput({
@@ -24,12 +34,13 @@ function App() {
     });
   };
 
-  const personalData: IData = [];
-
   const onButtonClick = () => {
-    personalData.push(...personalData, input);
+    setPersonalData([...personalData, input]);
   };
 
+  useEffect(() => {
+    console.log(personalData);
+  }, [personalData]);
   return (
     <>
       <form className="flex flex-col">
@@ -44,7 +55,7 @@ function App() {
         <input
           className="border-2 "
           type="number"
-          value={input.name}
+          value={input.age}
           name="age"
           placeholder="Enter age"
           onChange={onInputChange}
