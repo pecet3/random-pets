@@ -1,9 +1,13 @@
 import React from "react";
 
-export const Header: React.FC = () => {
+interface IHeader {
+  title: string;
+}
+
+export const Header: React.FC<IHeader> = ({ title }) => {
   return (
-    <header className="h-144">
-      <h1>Random Pets</h1>
+    <header className="">
+      <h1 className="text-4xl text-green-700">{title}</h1>
     </header>
   );
 };
