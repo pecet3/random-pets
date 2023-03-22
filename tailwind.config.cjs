@@ -15,6 +15,7 @@ module.exports = {
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
+      comics: ['Delicious Handrawn', 'cursive'],
     },
     extend: {
       spacing: {
