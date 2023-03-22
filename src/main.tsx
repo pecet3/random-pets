@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Header } from "./common/Header";
-import { Sidebar } from "./common/Sidebar";
+import { Input } from "./common/Input";
+
 import { Dogs } from "./features/Dogs";
 import { Cats } from "./features/Cats";
 import App from "./App";
@@ -20,6 +20,10 @@ export const router = createBrowserRouter([
   {
     path: "/cats",
     element: <Cats />,
+  },
+  {
+    path: "/input",
+    element: <Input />,
   },
 ]);
 
