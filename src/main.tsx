@@ -4,27 +4,27 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Header } from "./common/Header";
 import { Sidebar } from "./common/Sidebar";
 import { Dogs } from "./features/Dogs";
+import { Cats } from "./features/Cats";
 import App from "./App";
 import "./index.css";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Dogs />,
   },
   {
     path: "/dogs",
     element: <Dogs />,
   },
   {
-    path: "/header",
-    element: <Header title={"pieski"} />,
+    path: "/cats",
+    element: <Cats />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
     <App />
   </React.StrictMode>
 );
