@@ -7,7 +7,7 @@ interface IIcon {
 export const Sidebar: React.FC = () => {
   return (
     <>
-      <nav className="fixed top-0 flex w-16 flex-col gap-2 bg-gray-700 py-8 shadow-2xl shadow-slate-900">
+      <nav className="fixed top-0 my-16 flex w-16 flex-col gap-2 rounded-r-md bg-gray-700 py-8 shadow-2xl shadow-slate-900">
         <a href="/dogs">
           <Icon icon={<TbDog size="28" />} />
         </a>
