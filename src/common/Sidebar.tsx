@@ -11,8 +11,9 @@ export const Sidebar: React.FC = () => {
         <a href="/dogs">
           <Icon icon={<TbDog size="28" />} />
         </a>
-
-        <Icon icon={<TbCat size="28" />} />
+        <a href="/cats">
+          <Icon icon={<TbCat size="28" />} />
+        </a>
         <Icon icon={<RiInformationFill size="28" />} />
       </nav>
     </>
