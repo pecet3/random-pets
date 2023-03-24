@@ -1,15 +1,21 @@
 import { Sidebar } from "../../common/Sidebar";
 import { Header } from "../../common/Header";
-import { useEffect } from "react";
-import { getDogs } from "./getDogs";
+import { useEffect, useState } from "react";
+import { TResponse } from "./models";
+import axios from "axios";
 
 export const Dogs = () => {
+  const [response, setResponse] = useState<TResponse>();
   useEffect(() => {
-    try {
-      console.log(getDogs());
-    } catch (err) {
-      console.log(err);
-    }
+    const getDogs = async (): <TResponse> => {
+      try {
+        const response = await axios.get(
+          "https://dog.ceo/api/breeds/image/random"
+        );
+        console.log(response.data);
+      } catch (err) {}
+    };
+    setResponse(getDogs());
   });
 
   return (
