@@ -6,18 +6,17 @@ import axios from "axios";
 
 export const Dogs = () => {
   const [response, setResponse] = useState<TResponse>();
-  useEffect(() => {
-    const getDogs = async (): <TResponse> => {
-      try {
-        const response = await axios.get(
-          "https://dog.ceo/api/breeds/image/random"
-        );
-        console.log(response.data);
-      } catch (err) {}
-    };
-    setResponse(getDogs());
-  });
-
+  const getDogs = async () => {
+    try {
+      const response = await axios.get(
+        "https://dog.ceo/api/breeds/image/random"
+      );
+      return response.data;
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  setResponse(getDogs());
   return (
     <>
       <Sidebar />
