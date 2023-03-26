@@ -20,8 +20,10 @@ export const Dogs: React.FC = () => {
 
   useEffect(() => {
     setResponse(getDogs());
+  }, [setResponse]);
+  useEffect(() => {
     console.log(response);
-  }, []);
+  }, [response]);
   return (
     <>
       <Sidebar />
