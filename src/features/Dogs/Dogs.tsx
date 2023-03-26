@@ -5,29 +5,27 @@ import { TResponse } from "./models";
 import axios from "axios";
 
 export const Dogs: React.FC = () => {
-  const [response, setResponse] = useState<Promise<TResponse>>();
+  const [response, setResponse] = useState<TResponse>();
 
   const getDogs = async () => {
     try {
       const response = await axios.get(
         "https://dog.ceo/api/breeds/image/random"
       );
-      return response.data;
+      setResponse(response.data);
     } catch (err) {
       console.log(err);
     }
   };
 
   useEffect(() => {
-    setResponse(getDogs());
-  }, [setResponse]);
-  useEffect(() => {
-    console.log(response);
-  }, [response]);
+    getDogs();
+  }, []);
   return (
     <>
       <Sidebar />
       <Header title="Random Dogs" />
+      <img src={response && response.message} />
     </>
   );
 };
