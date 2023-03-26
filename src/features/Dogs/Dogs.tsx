@@ -21,11 +21,14 @@ export const Dogs: React.FC = () => {
   useEffect(() => {
     getDogs();
   }, []);
+
   return (
     <>
       <Sidebar />
       <Header title="Random Dogs" />
-      <img src={response && response.message} />
+      <div className="flex justify-center">
+        <img className="p-8" src={response && response.message} />
+      </div>
     </>
   );
 };
