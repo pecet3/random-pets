@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { TResponse } from "./models";
 import axios from "axios";
 
-export const Dogs = () => {
+export const Dogs: React.FC = () => {
   const [response, setResponse] = useState<Promise<TResponse>>();
 
   const getDogs = async () => {
@@ -20,7 +20,7 @@ export const Dogs = () => {
 
   useEffect(() => {
     setResponse(getDogs());
-    console.log(response.data);
+    console.log(response);
   }, []);
   return (
     <>
