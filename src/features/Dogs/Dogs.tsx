@@ -5,7 +5,8 @@ import { TResponse } from "./models";
 import axios from "axios";
 
 export const Dogs = () => {
-  const [response, setResponse] = useState<TResponse>();
+  const [response, setResponse] = useState<Promise<TResponse>>();
+
   const getDogs = async () => {
     try {
       const response = await axios.get(
@@ -16,7 +17,11 @@ export const Dogs = () => {
       console.log(err);
     }
   };
-  setResponse(getDogs());
+
+  useEffect(() => {
+    setResponse(getDogs());
+    console.log(response.data);
+  }, []);
   return (
     <>
       <Sidebar />
