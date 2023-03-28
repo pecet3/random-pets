@@ -5,9 +5,9 @@ import { TResponse } from "./models";
 import { getDogs } from "./getDogs";
 
 export const Dogs: React.FC = () => {
-  const [response, setResponse] = useState<TResponse | undefined>({
+  const [response, setResponse] = useState<TResponse>({
     message: "",
-    status: "initial",
+    status: "loading",
   });
 
   useEffect(() => {
@@ -19,7 +19,15 @@ export const Dogs: React.FC = () => {
       <Sidebar />
       <Header title="Random Dogs" />
       <div className="flex justify-center">
-        <img className="rounded-2xl p-8" src={response && response.message} />
+        {response.status === "error" ? (
+          <p>error</p>
+        ) : (
+          response.status === "loading" && <p>loading</p>
+        )}
+        <img
+          className="rounded-2xl p-8"
+          src={response && response.status && response.message}
+        />
       </div>
     </>
   );
