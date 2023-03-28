@@ -8,6 +8,7 @@ import { Cats } from "./features/Cats";
 import store from "./store";
 import App from "./App";
 import "./index.css";
+import { Sidebar } from "./common/Sidebar";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,7 @@ export const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
+      <Sidebar />
       <App />
     </Provider>
   </React.StrictMode>
