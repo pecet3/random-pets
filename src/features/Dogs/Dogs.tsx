@@ -16,7 +16,7 @@ export const Dogs: React.FC = () => {
       <Sidebar />
       <Header title="Random Dogs" />
       <div className="flex justify-center">
-        <img className="p-8" src={response && response.message} />
+        <img className="rounded-2xl p-8" src={response && response.message} />
       </div>
     </>
   );
