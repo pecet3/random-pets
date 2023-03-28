@@ -16,18 +16,21 @@ export const Dogs: React.FC = () => {
 
   return (
     <>
-      <Sidebar />
       <Header title="Random Dogs" />
       <div className="flex justify-center">
         {response.status === "error" ? (
-          <p>error</p>
+          <div className="mt-24">
+            <p className="font-comics text-2xl">error 😪</p>
+            <p className="text-1xl mt-2">please refresh the site</p>
+          </div>
+        ) : response.status === "loading..." ? (
+          <p className="font-comics text-2xl">loading...</p>
         ) : (
-          response.status === "loading" && <p>loading</p>
+          <img
+            className="rounded-2xl p-8"
+            src={response && response.status && response.message}
+          />
         )}
-        <img
-          className="rounded-2xl p-8"
-          src={response && response.status && response.message}
-        />
       </div>
     </>
   );
