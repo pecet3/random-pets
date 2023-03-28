@@ -1,5 +1,11 @@
 import axios from "axios";
-export const getDogs = async (setResponse) => {
+import { Dispatch, SetStateAction } from "react";
+import { TResponse } from "./models";
+
+interface IFetch {
+  setResponse: Dispatch<SetStateAction<TResponse | undefined>>;
+}
+export const getDogs = async ({ setResponse }: IFetch) => {
   try {
     const response = await axios.get("https://dog.ceo/api/breeds/image/random");
     setResponse(response.data);
