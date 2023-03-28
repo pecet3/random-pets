@@ -5,7 +5,10 @@ import { TResponse } from "./models";
 import { getDogs } from "./getDogs";
 
 export const Dogs: React.FC = () => {
-  const [response, setResponse] = useState<TResponse | undefined>();
+  const [response, setResponse] = useState<TResponse | undefined>({
+    message: "",
+    status: "initial",
+  });
 
   useEffect(() => {
     getDogs({ setResponse });
