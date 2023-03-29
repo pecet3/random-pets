@@ -1,7 +1,7 @@
 import { RefreshButton } from "../../common/RefreshButton";
 import { Header } from "../../common/Header";
 import { useEffect, useState } from "react";
-import { TResponse } from "./models";
+import { TResponse } from "../../common/models";
 import { getDogs } from "./getDogs";
 
 export const Dogs: React.FC = () => {
@@ -17,7 +17,7 @@ export const Dogs: React.FC = () => {
   return (
     <>
       <Header title="Random Dogs" />
-      <div className="flex flex-col justify-center">
+      <div className="flex flex-col justify-center px-60 py-8">
         {response.status === "error" ? (
           <div className="mt-24">
             <p className="font-comics text-2xl">error 😪</p>
@@ -27,11 +27,11 @@ export const Dogs: React.FC = () => {
           <p className="font-comics text-2xl">loading...</p>
         ) : (
           <img
-            className="rounded-2xl p-8"
+            className="rounded-lg"
             src={response && response.status && response.message}
           />
         )}
-        <RefreshButton />
+        <RefreshButton/>
       </div>
     </>
   );
