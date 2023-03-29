@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IFetch } from "./models";
+import { IFetch } from "../../common/models";
 
 export const getDogs = async ({ setResponse }: IFetch) => {
   try {
