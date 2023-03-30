@@ -1,8 +1,6 @@
 import { RiInformationFill } from "react-icons/ri";
 import { TbDog, TbCat } from "react-icons/tb";
-interface IIcon {
-  icon: JSX.Element;
-}
+import { IIcon } from "./models";
 
 export const Sidebar: React.FC = () => {
   return (
