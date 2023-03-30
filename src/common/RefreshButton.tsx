@@ -9,7 +9,12 @@ export const RefreshButton: React.FC<IRefresh> = ({ action }) => {
   };
   return (
     <div>
-      <button onClick={onClickButton}>New pet</button>
+      <button
+        className="mt-2 rounded-lg bg-gray-400 p-2"
+        onClick={onClickButton}
+      >
+        get new pet
+      </button>
     </div>
   );
 };
