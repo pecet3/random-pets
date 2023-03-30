@@ -7,3 +7,7 @@ export type TResponse = {
 export interface IFetch {
   setResponse: Dispatch<SetStateAction<TResponse>>;
 }
+
+export interface IIcon {
+  icon: JSX.Element;
+}
