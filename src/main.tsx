@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter } from "react-router-dom";
 import { Input } from "./common/Input";
 import { Provider } from "react-redux";
-import { Dogs } from "./features/Dogs/Dogs";
+import { Dogs } from "./features/Dogs";
 import { Cats } from "./features/Cats";
 import store from "./store";
 import App from "./App";
