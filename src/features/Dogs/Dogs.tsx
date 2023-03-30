@@ -31,7 +31,7 @@ export const Dogs: React.FC = () => {
             src={response && response.status && response.message}
           />
         )}
-        <RefreshButton/>
+        <RefreshButton action={() => getDogs({ setResponse })} />
       </div>
     </>
   );
