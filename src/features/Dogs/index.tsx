@@ -17,7 +17,7 @@ export const Dogs: React.FC = () => {
   return (
     <>
       <Header title="Random Dogs" />
-      <div className="flex flex-col justify-center px-60 py-8">
+      <div className="flex flex-col justify-center">
         {response.status === "error" ? (
           <div className="mt-24">
             <p className="font-comics text-2xl">error 😪</p>
@@ -27,7 +27,7 @@ export const Dogs: React.FC = () => {
           <p className="font-comics text-2xl">loading...</p>
         ) : (
           <img
-            className="rounded-lg"
+            className="mx-auto h-[424px] w-auto rounded-2xl"
             src={response && response.status && response.message}
           />
         )}
