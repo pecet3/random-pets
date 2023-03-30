@@ -1,13 +1,15 @@
 import React from "react";
 import { IFetch, TResponse } from "./models";
 interface IRefresh {
-  action?: IFetch;
+  action: () => void;
 }
 export const RefreshButton: React.FC<IRefresh> = ({ action }) => {
-  const onClickButton = () => {};
+  const onClickButton = () => {
+    action();
+  };
   return (
     <div>
-      <button>New pet</button>
+      <button onClick={onClickButton}>New pet</button>
     </div>
   );
 };
