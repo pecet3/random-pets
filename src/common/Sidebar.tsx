@@ -12,7 +12,9 @@ export const Sidebar: React.FC = () => {
         <a href="/cats">
           <Icon icon={<TbCat size="28" />} classes="sidebar-icon" />
         </a>
-        <Icon icon={<RiInformationFill size="28" />} classes="sidebar-icon" />
+        <a href="/dogs">
+          <Icon icon={<RiInformationFill size="28" />} classes="sidebar-icon" />
+        </a>
       </nav>
     </>
   );
