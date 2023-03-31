@@ -27,7 +27,7 @@ export const Dogs: React.FC = () => {
           <p className="font-comics text-2xl">loading...</p>
         ) : (
           <img
-            className="mx-auto h-[300px] w-auto rounded-2xl p-1 lg:h-[424px]"
+            className="mx-auto h-[324px] w-auto rounded-2xl p-1 md:h-[520px]"
             src={response && response.status && response.message}
           />
         )}
