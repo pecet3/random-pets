@@ -19,4 +19,7 @@
          lg:shadow-2xl shadow-slate-900
          rounded-none justify-center
     }
+    .image {
+        @apply mx-auto h-[324px] w-auto rounded-2xl p-1 md:h-[520px]
+    }
 }
