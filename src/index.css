@@ -8,15 +8,15 @@
         justify-center h-12 w-12
         mx-auto shadow-lg bg-gray-600 hover:bg-gray-500 text-emerald-400
         rounded-3xl hover:rounded-xl
-        transition-all duration-300
+        transition-all duration-300 
     }
 
     .sidebar {
-        @apply fixed top-0 
-        my-16 flex w-16 flex-col 
-        gap-2 rounded-r-md
-         bg-gray-700 py-8 
+        @apply lg:fixed lg:top-0 
+        lg:my-16 flex lg:w-16 lg:flex-col 
+        lg:gap-2 lg:rounded-r-md gap-6
+         bg-gray-700 lg:py-8 py-2
          shadow-2xl shadow-slate-900
-         xl:rounded-none
+         rounded-none justify-center
     }
 }
