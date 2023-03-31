@@ -3,7 +3,6 @@ import { Header } from ".././common/Header";
 export const Cats = () => {
   return (
     <>
-      <Sidebar />
       <Header title="Random Cats" />
     </>
   );
