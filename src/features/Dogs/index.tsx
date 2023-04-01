@@ -2,6 +2,7 @@ import { RefreshButton } from "../../common/RefreshButton";
 import { Header } from "../../common/Header";
 import { useEffect, useState } from "react";
 import { TResponse } from "../../common/models";
+import { Sidebar } from "../../common/Sidebar";
 import { getDogs } from "./getDogs";
 
 export const Dogs: React.FC = () => {
@@ -17,6 +18,7 @@ export const Dogs: React.FC = () => {
   return (
     <>
       <Header title="Random Dogs" />
+      <Sidebar />
       <div className="flex flex-col justify-center">
         {response.status === "error" ? (
           <div className="mt-24">
