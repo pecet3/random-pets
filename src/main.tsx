@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Input } from "./common/Input";
 import { Provider } from "react-redux";
 import { Dogs } from "./features/Dogs";
@@ -11,10 +11,6 @@ import "./index.css";
 import { Sidebar } from "./common/Sidebar";
 
 export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Dogs />,
-  },
   {
     path: "/dogs",
     element: <Dogs />,
@@ -27,12 +23,15 @@ export const router = createBrowserRouter([
     path: "/input",
     element: <Input />,
   },
+  {
+    path: "/",
+    element: <Sidebar />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <Sidebar />
       <App />
     </Provider>
   </React.StrictMode>
