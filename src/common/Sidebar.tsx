@@ -1,20 +1,21 @@
 import { RiInformationFill } from "react-icons/ri";
 import { TbDog, TbCat } from "react-icons/tb";
+import { Link } from "react-router-dom";
 import { Icon } from "./Icon";
 
 export const Sidebar: React.FC = () => {
   return (
     <>
       <nav className="sidebar">
-        <a href="/dogs">
+        <Link to="/dogs" relative="path">
           <Icon icon={<TbDog size="28" />} classes="sidebar-icon" />
-        </a>
-        <a href="/cats">
+        </Link>
+        <Link to="/cats" relative="path">
           <Icon icon={<TbCat size="28" />} classes="sidebar-icon" />
-        </a>
-        <a href="/dogs">
+        </Link>
+        <Link to="/dogs" relative="path">
           <Icon icon={<RiInformationFill size="28" />} classes="sidebar-icon" />
-        </a>
+        </Link>
       </nav>
     </>
   );
