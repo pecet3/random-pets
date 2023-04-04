@@ -15,7 +15,7 @@ export const RefreshButton: React.FC<IRefresh> = ({ action }) => {
         onClick={onClickButton}
       >
         <div className="flex-raw flex justify-center gap-2">
-          <Icon icon={<TbRefresh size="28" />} classes="mx-auto" />
+          <Icon icon={<TbRefresh size="24" />} classes="mx-auto" />
           get new pet
         </div>
       </button>
