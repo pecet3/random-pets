@@ -10,5 +10,5 @@ export interface IFetch {
 
 export interface IIcon {
   icon: JSX.Element;
-  classes: string;
+  classes?: string;
 }
