@@ -16,7 +16,9 @@ export const Sidebar: React.FC = () => {
         <Link to="/dogs" relative="path">
           <Icon icon={<RiInformationFill size="28" />} classes="sidebar-icon" />
         </Link>
-        <Icon icon={<TbMoon size="28" />} classes="sidebar-icon" />
+        <a>
+          <Icon icon={<TbMoon size="28" />} classes="sidebar-icon" />
+        </a>
       </nav>
     </>
   );
