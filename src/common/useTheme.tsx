@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-type Theme = "light" | "dark";
+export type Theme = "light" | "dark";
 
 const useTheme = (): { theme: Theme; toggleTheme: () => void } => {
   const [theme, setTheme] = useState<Theme>(
@@ -8,7 +8,7 @@ const useTheme = (): { theme: Theme; toggleTheme: () => void } => {
   );
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.setAttribute("class", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
 
