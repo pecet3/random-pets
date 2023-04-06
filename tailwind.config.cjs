@@ -16,6 +16,7 @@ module.exports = {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
       comics: ['Delicious Handrawn', 'cursive'],
+      bebas: ['Bebas Neue', 'cursive'],
     },
     extend: {
       spacing: {
