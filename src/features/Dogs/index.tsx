@@ -19,7 +19,7 @@ export const Dogs: React.FC = () => {
     <>
       <Header title="Random Dogs" />
       <Sidebar />
-      <div className="flex flex-col justify-center">
+      <div className="mx-1 flex flex-col justify-center">
         {response.status === "error" ? (
           <div className="mt-24">
             <p className="font-comics text-2xl">error 😪</p>
@@ -33,7 +33,7 @@ export const Dogs: React.FC = () => {
             src={response && response.status && response.message}
           />
         )}
-        <RefreshButton action={() => getDogs({ setResponse })} />
+        <RefreshButton action={() => getDogs({ setResponse })} petType="Dog" />
       </div>
     </>
   );
