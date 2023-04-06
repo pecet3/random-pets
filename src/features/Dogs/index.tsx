@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { TResponse } from "../../common/models";
 import { Sidebar } from "../../common/Sidebar";
 import { getDogs } from "./getDogs";
+import { Error } from "../../common/Error";
+import { Loading } from "../../common/Loading";
 
 export const Dogs: React.FC = () => {
   const [response, setResponse] = useState<TResponse>({
@@ -12,7 +14,9 @@ export const Dogs: React.FC = () => {
   });
 
   useEffect(() => {
-    getDogs({ setResponse });
+    setTimeout(() => {
+      getDogs({ setResponse });
+    }, 1250);
   }, []);
 
   return (
@@ -21,12 +25,9 @@ export const Dogs: React.FC = () => {
       <Sidebar />
       <div className="mx-1 flex flex-col justify-center">
         {response.status === "error" ? (
-          <div className="mt-24">
-            <p className="font-comics text-2xl">error 😪</p>
-            <p className="text-1xl mt-2">please refresh the site</p>
-          </div>
-        ) : response.status === "loading..." ? (
-          <p className="font-comics text-2xl">loading...</p>
+          <Error />
+        ) : response.status === "loading" ? (
+          <Loading />
         ) : (
           <img
             className="image"
