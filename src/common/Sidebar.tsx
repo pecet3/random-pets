@@ -1,5 +1,5 @@
 import { RiInformationFill } from "react-icons/ri";
-import { TbDog, TbCat, TbMoon } from "react-icons/tb";
+import { TbDog, TbCat } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { Icon } from "./Icon";
 import { ToggleThemeButton } from "./ToggleThemeButton";
