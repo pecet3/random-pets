@@ -1,7 +1,5 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./main";
-import { Sidebar } from "./common/Sidebar";
-import { useState } from "react";
 
 function App() {
   return (
