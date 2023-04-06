@@ -12,12 +12,12 @@ export const RefreshButton: React.FC<IRefresh> = ({ action, petType }) => {
   return (
     <div>
       <button
-        className="mt-2 rounded-xl bg-teal-300 p-3 transition-all duration-300 md:hover:rounded-md md:hover:bg-teal-400"
+        className="mt-2 rounded-xl bg-teal-600 px-4 py-2 transition-all duration-300 md:hover:rounded-md md:hover:bg-teal-700"
         onClick={onClickButton}
       >
-        <div className="flex-raw flex justify-center gap-2">
+        <div className="flex items-center gap-2 font-bebas text-lg tracking-wide text-lime-300">
           <Icon icon={<TbRefresh size="24" />} classes="mx-auto" />
-          <p className="font-comics">New {petType}</p>
+          <p>New {petType}</p>
         </div>
       </button>
     </div>
