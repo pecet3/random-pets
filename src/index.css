@@ -6,8 +6,8 @@
     .sidebar-icon {
         @apply relative flex items-center 
         justify-center h-12 w-12
-        mx-auto shadow-lg bg-gray-600 hover:bg-gray-500 text-emerald-400
-        rounded-3xl hover:rounded-xl
+        mx-auto shadow-lg bg-gray-600 md:hover:bg-gray-500 text-emerald-400
+        rounded-3xl md:hover:rounded-xl
         transition-all duration-300 
     }
 
@@ -20,6 +20,8 @@
          rounded-none justify-center
     }
     .image {
-        @apply mx-auto h-[324px] w-auto rounded-2xl p-1 md:h-[520px] mt-16 md:mt-4 md:mb-2 mb-8 
+        @apply mx-auto h-[324px] w-auto rounded-2xl 
+        md:h-[520px] mt-12 md:mt-4 md:mb-2 sm:mb-4 mb-1
+        shadow-2xl shadow-gray-500 
     }
 }
