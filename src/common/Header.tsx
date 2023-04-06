@@ -8,7 +8,7 @@ export const Header: React.FC<IHeader> = ({ title }) => {
   return (
     <header className="p-2">
       <h1 className="font-comics text-4xl text-green-700 md:text-4xl">
-        {title} ...
+        {title}
       </h1>
     </header>
   );
