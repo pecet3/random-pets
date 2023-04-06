@@ -1,5 +1,5 @@
 import { RiInformationFill } from "react-icons/ri";
-import { TbDog, TbCat } from "react-icons/tb";
+import { TbDog, TbCat, TbMoon } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { Icon } from "./Icon";
 
@@ -16,6 +16,7 @@ export const Sidebar: React.FC = () => {
         <Link to="/dogs" relative="path">
           <Icon icon={<RiInformationFill size="28" />} classes="sidebar-icon" />
         </Link>
+        <Icon icon={<TbMoon size="28" />} classes="sidebar-icon" />
       </nav>
     </>
   );
