@@ -8,8 +8,7 @@ function App() {
       <div className="">
         <div className="bg-gray-200 dark:bg-slate-600">
           <div className="m-auto my-0 max-w-full pb-[100%] text-center">
-            {/* <RouterProvider router={router} /> */}
-            <h1>test</h1>
+            <RouterProvider router={router} />
           </div>
         </div>
       </div>
