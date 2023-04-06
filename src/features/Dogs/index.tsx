@@ -6,6 +6,7 @@ import { Sidebar } from "../../common/Sidebar";
 import { getDogs } from "./getDogs";
 import { Error } from "../../common/Error";
 import { Loading } from "../../common/Loading";
+import { MainWrapper } from "../../common/MainWrapper";
 
 export const Dogs: React.FC = () => {
   const [response, setResponse] = useState<TResponse>({
@@ -23,7 +24,7 @@ export const Dogs: React.FC = () => {
     <>
       <Header title="Random Dogs" />
       <Sidebar />
-      <div className="mx-1 flex flex-col justify-center">
+      <MainWrapper>
         {response.status === "error" ? (
           <Error />
         ) : response.status === "loading" ? (
@@ -35,7 +36,7 @@ export const Dogs: React.FC = () => {
           />
         )}
         <RefreshButton action={() => getDogs({ setResponse })} petType="Dog" />
-      </div>
+      </MainWrapper>
     </>
   );
 };
