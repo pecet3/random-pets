@@ -2,12 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const dogsSlice = createSlice({
   name: "dogs",
-  initialState: {},
-  reducers: {},
+  initialState: {
+    filter: "",
+  },
+  reducers: {
+    changeFilter: (state, { payload: filter }) => {
+      state.filter = filter;
+    },
+  },
 });
 
-export const {} = dogsSlice.actions;
+export const { changeFilter } = dogsSlice.actions;
 
-// export const selectDogsState = (state) => state.dogs;
+export const selectDogsState = (state) => state.dogs;
 
 export default dogsSlice.reducer;
