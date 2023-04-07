@@ -39,8 +39,7 @@ export const Dogs: React.FC = () => {
             src={response && response.status && response.message}
           />
         )}
-        <RefreshButton action={() => getDogs({ setResponse })} petType="Dog" />
-        <form className="m-0 flex justify-center gap-2">
+        <form className="my-2 flex justify-center gap-2 font-bebas">
           <span>
             <legend>Sepia</legend>
             <input
@@ -72,6 +71,7 @@ export const Dogs: React.FC = () => {
             />
           </span>
         </form>
+        <RefreshButton action={() => getDogs({ setResponse })} petType="Dog" />
       </MainWrapper>
     </>
   );
