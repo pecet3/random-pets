@@ -4,7 +4,9 @@ interface IForm {
   image: string;
 }
 export const ImageAndFilters: React.FC<IForm> = ({ image }) => {
-  const [filter, setFilter] = useState<string>("");
+  const [filter, setFilter] = useState<string>(
+    filters[filters.findIndex((element) => element.name === "None")].value || ""
+  );
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilter(event.target.value);
