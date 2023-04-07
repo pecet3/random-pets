@@ -21,6 +21,7 @@ export const ImageAndFilters: React.FC<IForm> = ({ image }) => {
         <img
           className={`m-0 h-[324px] rounded-2xl object-fill md:h-[520px] ${filter} saturate-150`}
           src={image && image}
+          alt="image of a random dog"
         />
       </div>
       <form className="my-2 flex justify-center gap-6 font-bebas">
