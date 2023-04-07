@@ -7,13 +7,16 @@ import { getDogs } from "./getDogs";
 import { Error } from "../../common/Error";
 import { Loading } from "../../common/Loading";
 import { MainWrapper } from "../../common/MainWrapper";
-
+import { FilterForm } from "./FilterForm";
 export const Dogs: React.FC = () => {
   const [response, setResponse] = useState<TResponse>({
     message: "",
     status: "loading",
   });
-
+  const [filter, setFilter] = useState<string>("");
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFilter(event.target.value);
+  };
   useEffect(() => {
     setTimeout(() => {
       getDogs({ setResponse });
@@ -31,11 +34,44 @@ export const Dogs: React.FC = () => {
           <Loading />
         ) : (
           <img
-            className="image"
+            id="image"
+            className={`image ${filter}`}
             src={response && response.status && response.message}
           />
         )}
         <RefreshButton action={() => getDogs({ setResponse })} petType="Dog" />
+        <form className="m-0 flex justify-center gap-2">
+          <span>
+            <legend>Sepia</legend>
+            <input
+              type="radio"
+              name="filter"
+              value="sepia"
+              onChange={handleChange}
+              checked={filter === "sepia"}
+            />
+          </span>
+          <span>
+            <legend>Invert</legend>
+            <input
+              type="radio"
+              name="filter"
+              value="invert"
+              onChange={handleChange}
+              checked={filter === "invert"}
+            />
+          </span>
+          <span>
+            <legend>None</legend>
+            <input
+              type="radio"
+              name="filter"
+              value=""
+              onChange={handleChange}
+              checked={filter === ""}
+            />
+          </span>
+        </form>
       </MainWrapper>
     </>
   );
