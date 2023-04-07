@@ -19,9 +19,4 @@
          lg:shadow-2xl shadow-slate-900
          rounded-none justify-center z-50
     }
-    .image {
-        @apply mx-auto h-[324px] w-auto rounded-2xl 
-        md:h-[520px] mt-8 md:mt-4 mb-2 sm:mb-4
-        shadow-2xl shadow-gray-500 dark:shadow-gray-900
-    }
 }
