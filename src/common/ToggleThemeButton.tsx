@@ -3,7 +3,7 @@ import { Icon } from "./Icon";
 
 export interface IToggle {
   action: () => void;
-  state?: string;
+  state: string;
 }
 export const ToggleThemeButton: React.FC<IToggle> = ({ action, state }) => {
   return (
