@@ -28,11 +28,8 @@ export const Dogs: React.FC = () => {
         ) : response.status === "loading" ? (
           <Loading />
         ) : (
-          <ImageAndFilters
-            image={response && response.status && response.message}
-          />
+          <ImageAndFilters image={response && response.message} />
         )}
-
         <RefreshButton action={() => getDogs({ setResponse })} petType="Dog" />
       </MainWrapper>
     </>
