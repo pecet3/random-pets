@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { filters } from "./filters";
 interface IForm {
   image: string;
 }
@@ -20,37 +21,20 @@ export const ImageAndFilters: React.FC<IForm> = ({ image }) => {
           src={image && image}
         />
       </div>
-      <form className="my-2 flex justify-center gap-2 font-bebas">
-        <span>
-          <legend>Sepia</legend>
-          <input
-            type="radio"
-            name="filter"
-            value="sepia"
-            onChange={handleChange}
-            checked={filter === "sepia"}
-          />
-        </span>
-        <span>
-          <legend>Invert</legend>
-          <input
-            type="radio"
-            name="filter"
-            value="invert"
-            onChange={handleChange}
-            checked={filter === "invert"}
-          />
-        </span>
-        <span>
-          <legend>None</legend>
-          <input
-            type="radio"
-            name="filter"
-            value=""
-            onChange={handleChange}
-            checked={filter === ""}
-          />
-        </span>
+      <form className="my-2 flex justify-center gap-6 font-bebas">
+        {filters &&
+          filters.map((element) => (
+            <span key={element.name}>
+              <legend>{element.name}</legend>
+              <input
+                type="radio"
+                name="filter"
+                value={element.value}
+                onChange={handleChange}
+                checked={filter === element.value}
+              />
+            </span>
+          ))}
       </form>
     </>
   );
