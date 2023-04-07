@@ -14,6 +14,6 @@ const dogsSlice = createSlice({
 
 export const { changeFilter } = dogsSlice.actions;
 
-export const selectDogsState = (state) => state.dogs;
+// export const selectDogsState = () => state.dogs;
 
 export default dogsSlice.reducer;
