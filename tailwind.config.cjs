@@ -25,7 +25,7 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
-      }
+      },
     }
   },
   plugins: [require('prettier-plugin-tailwindcss')],
