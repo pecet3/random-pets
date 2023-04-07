@@ -4,6 +4,7 @@ interface IForm {
 }
 export const FilterForm: React.FC<IForm> = ({ action }) => {
   const [filter, setFilter] = useState<string>("");
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilter(event.target.value);
   };
