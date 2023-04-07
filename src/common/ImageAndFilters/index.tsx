@@ -19,7 +19,7 @@ export const ImageAndFilters: React.FC<IForm> = ({ image }) => {
         rounded-2xl shadow-2xl shadow-gray-500 dark:shadow-gray-900 sm:mb-4 md:mt-4"
       >
         <img
-          className={`m-0 h-[324px] rounded-2xl object-fill md:h-[520px] ${filter}`}
+          className={`m-0 h-[324px] rounded-2xl object-fill md:h-[520px] ${filter} saturate-150`}
           src={image && image}
         />
       </div>
