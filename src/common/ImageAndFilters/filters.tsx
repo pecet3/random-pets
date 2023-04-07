@@ -1,11 +1,11 @@
 export const filters: { name: string; value: string }[] = [
   {
-    name: "Sepia",
-    value: "sepia",
-  },
-  {
     name: "None",
     value: "",
+  },
+  {
+    name: "Sepia",
+    value: "sepia",
   },
   {
     name: "Invert",
