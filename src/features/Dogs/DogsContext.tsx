@@ -61,6 +61,8 @@ export const ContextProvider: React.FC<Props> = ({ children }) => {
     getDogs({ setResponse });
   };
 
+  const setFetchMessage = () => {};
+
   return (
     <Context.Provider value={{ state, addToArray, getImage }}>
       {children}
