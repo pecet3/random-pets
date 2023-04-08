@@ -1,9 +1,13 @@
 import React from "react";
 
 export const defaultValue = {
-  counter: 1,
+  counter: 2,
 };
 
-const DogsContext = React.createContext(defaultValue);
+export type DogsContext = {
+  counter: number;
+};
+
+const DogsContext = React.createContext<DogsContext>(defaultValue);
 
 export default DogsContext;
