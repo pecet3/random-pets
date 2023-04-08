@@ -7,9 +7,9 @@ import { MainWrapper } from "../../common/MainWrapper";
 import { ImageAndFilters } from "../../common/ImageAndFilters";
 import { useGetDogs } from "./useGetDogs";
 import { useContext } from "react";
-import DogsContext from "./dogsContext";
+import Context from "../../Context";
 export const Dogs: React.FC = () => {
-  const dogs = useContext(DogsContext);
+  const dogs = useContext(Context);
   const { response, setResponse, getDogs } = useGetDogs();
   return (
     <>
@@ -24,7 +24,7 @@ export const Dogs: React.FC = () => {
           <ImageAndFilters image={response && response.message} />
         )}
         <RefreshButton action={() => getDogs({ setResponse })} petType="Dog" />
-        <p>{dogs.counter}</p>
+        <p>{dogs?.counter}</p>
       </MainWrapper>
     </>
   );

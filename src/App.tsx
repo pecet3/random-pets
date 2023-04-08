@@ -1,10 +1,10 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./main";
-import React, { Component, useState } from "react";
-import DogsContext, { defaultValue } from "./features/Dogs/dogsContext";
+import { useState } from "react";
+import Context, { defaultValue, TContext } from "./Context";
 
 function App() {
-  const [state, setState] = useState(defaultValue);
+  const [state, setState] = useState<TContext>(defaultValue);
 
   return (
     <div
@@ -14,9 +14,9 @@ function App() {
       dark:text-slate-200"
     >
       <div className="m-auto my-0 max-w-full pb-[500px] text-center ">
-        <DogsContext.Provider value={state}>
+        <Context.Provider value={state}>
           <RouterProvider router={router} />
-        </DogsContext.Provider>
+        </Context.Provider>
       </div>
     </div>
   );
