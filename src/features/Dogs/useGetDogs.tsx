@@ -25,9 +25,7 @@ export const useGetDogs = (): {
     }
   };
   useEffect(() => {
-    setTimeout(() => {
-      getDogs({ setResponse });
-    }, 1250);
+    getDogs({ setResponse });
   }, []);
   return { response, setResponse, getDogs };
 };
