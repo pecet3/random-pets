@@ -14,7 +14,7 @@ export const Counter: React.FC = () => {
   return (
     <>
       <p>{state.counter}</p>
-      <button onClick={() => add("aaaa")}>+1</button>
+      <button onClick={() => add()}>+1</button>
     </>
   );
 };
