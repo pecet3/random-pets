@@ -8,8 +8,8 @@ export const Header: React.FC<IHeader> = ({ title }) => {
   return (
     <header
       className="bg-[rgba(255,255,255,0.6)] 
-    p-2 pb-4 dark:bg-transparent 
-    md:p-4 lg:bg-transparent dark:lg:bg-transparent "
+    p-2 pb-4 font-bold 
+    dark:bg-transparent md:p-4 md:font-normal lg:bg-transparent dark:lg:bg-transparent"
     >
       <h1
         className="font-comics text-4xl tracking-widest
