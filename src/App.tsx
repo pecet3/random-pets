@@ -1,11 +1,6 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./main";
-import { useState } from "react";
-import Context, { defaultValue, TContext } from "./Context";
-
 function App() {
-  const [state, setState] = useState<TContext>(defaultValue);
-
   return (
     <div
       className="bg-[url('./lightBgImage.jpg')]
@@ -14,9 +9,7 @@ function App() {
       dark:text-slate-200"
     >
       <div className="m-auto my-0 max-w-full pb-[500px] text-center ">
-        <Context.Provider value={state}>
-          <RouterProvider router={router} />
-        </Context.Provider>
+        <RouterProvider router={router} />
       </div>
     </div>
   );
