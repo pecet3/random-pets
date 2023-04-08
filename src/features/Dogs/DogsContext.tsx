@@ -1,16 +1,18 @@
 import React from "react";
 import { useGetDogs } from "./useGetDogs";
 import { TResponse } from "../../common/models";
-export const defaultValue = {
-  message: "",
-  status: "",
+export const initialState = {
+  fetch: { message: "", status: "" },
+  savedImgs: [],
 };
 export interface IState {
-  response: TResponse | null;
+  fetch: TResponse | null;
+  savedImgs: string[];
 }
 export type TContext = {
-  state: TResponse | null;
-  add: () => void;
+  state: IState;
+  addToArray: () => void;
+  getImage: () => void;
 };
 
 interface Props {
@@ -19,13 +21,48 @@ interface Props {
 
 export const ContextProvider: React.FC<Props> = ({ children }) => {
   const { response, setResponse, getDogs } = useGetDogs();
-  const [state, setState] = React.useState<TResponse>(defaultValue);
+  const [state, setState] = React.useState<IState>({
+    fetch: response,
+    savedImgs: [],
+  });
 
-  const add = () => {
-    setState((prev) => (prev = response));
+  React.useEffect(() => {
+    setState(
+      (prev) =>
+        (prev = {
+          fetch: {
+            message: response.message,
+            status: response.status,
+          },
+          savedImgs: prev.savedImgs,
+        })
+    );
+    console.log(state);
+  }, [response]);
+
+  const addToArray = () => {
+    setState(
+      (prev) =>
+        (prev = {
+          fetch: {
+            message: response.message,
+            status: response.status,
+          },
+          savedImgs: [...prev.savedImgs, response.message],
+        })
+    );
     console.log(state);
   };
-  return <Context.Provider value={{ state, add }}>{children}</Context.Provider>;
+
+  const getImage = () => {
+    getDogs({ setResponse });
+  };
+
+  return (
+    <Context.Provider value={{ state, addToArray, getImage }}>
+      {children}
+    </Context.Provider>
+  );
 };
 
 const Context = React.createContext<TContext | null>(null);
