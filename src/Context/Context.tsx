@@ -8,7 +8,7 @@ export interface ICounter {
 }
 export type TContext = {
   state: ICounter;
-  add: (prop: string | any) => void;
+  add: () => void;
 };
 
 interface Props {
@@ -18,8 +18,13 @@ interface Props {
 export const ContextProvider: React.FC<Props> = ({ children }) => {
   const [state, setState] = React.useState<ICounter>(defaultValue);
 
-  const add = (prop: string) => {
-    console.log(prop);
+  const add = () => {
+    setState(
+      (prev) =>
+        (prev = {
+          counter: prev.counter + 1,
+        })
+    );
   };
   return <Context.Provider value={{ state, add }}>{children}</Context.Provider>;
 };
