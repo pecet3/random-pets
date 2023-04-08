@@ -16,7 +16,7 @@ export const SavedImages = () => {
       </button>
       <div className="grid grid-cols-2 justify-center gap-2 text-center md:grid-cols-3 lg:grid-cols-4">
         {state.savedImgs.map((element) => (
-          <button onClick={()=>}>
+          <button>
             <img
               src={element}
               key={nanoid()}
