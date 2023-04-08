@@ -6,32 +6,25 @@ import { Loading } from "../../common/Loading";
 import { MainWrapper } from "../../common/MainWrapper";
 import { ImageAndFilters } from "../../common/ImageAndFilters";
 import { useGetDogs } from "./useGetDogs";
-import { useContext } from "react";
-import Context, { ICounter, TContext } from "../../Context/Context";
-import { ContextProvider } from "../../Context/Context";
+import { ContextProvider } from "./DogsContext";
 import { Counter } from "./Counter";
 export const Dogs: React.FC = () => {
   const { response, setResponse, getDogs } = useGetDogs();
   return (
-    <>
-      <ContextProvider>
-        <Header title="Random Dogs" />
-        <Sidebar />
-        <MainWrapper>
-          {response.status === "error" ? (
-            <Error />
-          ) : response.status === "loading" ? (
-            <Loading />
-          ) : (
-            <ImageAndFilters image={response && response.message} />
-          )}
-          <RefreshButton
-            action={() => getDogs({ setResponse })}
-            petType="Dog"
-          />
-          <Counter />
-        </MainWrapper>
-      </ContextProvider>
-    </>
+    <ContextProvider>
+      <Header title="Random Dogs" />
+      <Sidebar />
+      <MainWrapper>
+        {response.status === "error" ? (
+          <Error />
+        ) : response.status === "loading" ? (
+          <Loading />
+        ) : (
+          <ImageAndFilters image={response && response.message} />
+        )}
+        <RefreshButton action={() => getDogs({ setResponse })} petType="Dog" />
+        <Counter />
+      </MainWrapper>
+    </ContextProvider>
   );
 };

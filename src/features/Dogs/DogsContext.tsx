@@ -1,13 +1,15 @@
 import React from "react";
-
+import { useGetDogs } from "./useGetDogs";
+import { TResponse } from "../../common/models";
 export const defaultValue = {
-  counter: 10,
+  message: "",
+  status: "",
 };
-export interface ICounter {
-  counter: number;
+export interface IState {
+  response: TResponse | null;
 }
 export type TContext = {
-  state: ICounter;
+  state: TResponse | null;
   add: () => void;
 };
 
@@ -16,15 +18,12 @@ interface Props {
 }
 
 export const ContextProvider: React.FC<Props> = ({ children }) => {
-  const [state, setState] = React.useState<ICounter>(defaultValue);
+  const { response, setResponse, getDogs } = useGetDogs();
+  const [state, setState] = React.useState<TResponse>(defaultValue);
 
   const add = () => {
-    setState(
-      (prev) =>
-        (prev = {
-          counter: prev.counter + 1,
-        })
-    );
+    setState((prev) => (prev = response));
+    console.log(state);
   };
   return <Context.Provider value={{ state, add }}>{children}</Context.Provider>;
 };
