@@ -1,10 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  createHashRouter,
-} from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import { Input } from "./common/Input";
 import { Provider } from "react-redux";
 import { Dogs } from "./features/Dogs";
@@ -12,7 +8,6 @@ import { Cats } from "./features/Cats";
 import store from "./store";
 import App from "./App";
 import "./index.css";
-import { Sidebar } from "./common/Sidebar";
 
 export const router = createHashRouter([
   {
