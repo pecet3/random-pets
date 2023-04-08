@@ -41,6 +41,9 @@ export const ContextProvider: React.FC<Props> = ({ children }) => {
   }, [response]);
 
   const addToArray = () => {
+    if (state.savedImgs.includes(response.message)) {
+      return;
+    }
     setState(
       (prev) =>
         (prev = {
