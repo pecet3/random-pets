@@ -8,6 +8,7 @@ import { ImageAndFilters } from "../../common/ImageAndFilters";
 import { useGetDogs } from "./useGetDogs";
 import { ContextProvider } from "./DogsContext";
 import { Counter } from "./Counter";
+import { Core } from "./Core";
 export const Dogs: React.FC = () => {
   const { response, setResponse, getDogs } = useGetDogs();
   return (
@@ -20,9 +21,9 @@ export const Dogs: React.FC = () => {
         ) : response.status === "loading" ? (
           <Loading />
         ) : (
-          <ImageAndFilters image={response && response.message} />
+          // <ImageAndFilters image={response && response.message} />
+          <Core />
         )}
-        <RefreshButton action={() => getDogs({ setResponse })} petType="Dog" />
         <Counter />
       </MainWrapper>
     </ContextProvider>
