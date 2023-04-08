@@ -7,7 +7,6 @@ import { MainWrapper } from "../../common/MainWrapper";
 import { ImageAndFilters } from "../../common/ImageAndFilters";
 import { useGetDogs } from "./useGetDogs";
 import Context, { TContext } from "./DogsContext";
-import { Counter } from "./Counter";
 import { useContext } from "react";
 
 export const Core: React.FC = () => {
