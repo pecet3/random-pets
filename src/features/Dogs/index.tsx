@@ -7,7 +7,7 @@ import { MainWrapper } from "../../common/MainWrapper";
 import { ImageAndFilters } from "../../common/ImageAndFilters";
 import { useGetDogs } from "./useGetDogs";
 import { ContextProvider } from "./DogsContext";
-import { Counter } from "./Counter";
+import { SavedImages } from "./SavedImages";
 import { Core } from "./Core";
 export const Dogs: React.FC = () => {
   const { response, setResponse, getDogs } = useGetDogs();
@@ -24,7 +24,7 @@ export const Dogs: React.FC = () => {
           // <ImageAndFilters image={response && response.message} />
           <Core />
         )}
-        <Counter />
+        <SavedImages />
       </MainWrapper>
     </ContextProvider>
   );
