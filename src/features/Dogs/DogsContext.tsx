@@ -13,6 +13,7 @@ export type TContext = {
   state: IState;
   addToArray: () => void;
   getImage: () => void;
+  setFetchMessage: (index: number) => void;
 };
 
 interface Props {
@@ -37,7 +38,6 @@ export const ContextProvider: React.FC<Props> = ({ children }) => {
           savedImgs: prev.savedImgs,
         })
     );
-    console.log(state);
   }, [response]);
 
   const addToArray = () => {
@@ -54,17 +54,27 @@ export const ContextProvider: React.FC<Props> = ({ children }) => {
           savedImgs: [...prev.savedImgs, response.message],
         })
     );
-    console.log(state);
   };
 
   const getImage = () => {
     getDogs({ setResponse });
   };
 
-  const setFetchMessage = () => {};
+  const setFetchMessage = (index: number) => {
+    setState(
+      (prev) =>
+        (prev = {
+          fetch: {
+            message: prev.savedImgs[index],
+            status: response.status,
+          },
+          savedImgs: [...prev.savedImgs],
+        })
+    );
+  };
 
   return (
-    <Context.Provider value={{ state, addToArray, getImage }}>
+    <Context.Provider value={{ state, addToArray, getImage, setFetchMessage }}>
       {children}
     </Context.Provider>
   );
