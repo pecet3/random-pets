@@ -15,13 +15,13 @@ export const ImageAndFilters: React.FC<IForm> = ({ image }) => {
   return (
     <>
       <div
-        className="m-auto mt-8 mb-2 flex max-w-max justify-center
-        rounded-2xl shadow-2xl shadow-gray-500 dark:shadow-gray-900 sm:mb-4 md:mt-4"
+        className="m-auto mt-1 flex max-w-max justify-center
+        rounded-2xl shadow-2xl shadow-gray-500 dark:shadow-gray-900"
       >
         <img
           className={`m-0 h-[324px] rounded-2xl object-fill md:h-[520px] ${filter} saturate-150`}
           src={image && image}
-          alt="image of a random dog"
+          alt="image of a random pet"
         />
       </div>
       <form className="my-2 flex justify-center gap-6 font-bebas">
