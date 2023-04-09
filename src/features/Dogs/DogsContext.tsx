@@ -61,6 +61,10 @@ export const ContextProvider: React.FC<Props> = ({ children }) => {
     );
   };
 
+  const moveToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   const getImage = () => {
     getDogs({ setResponse });
   };
@@ -76,6 +80,7 @@ export const ContextProvider: React.FC<Props> = ({ children }) => {
           savedImgs: [...prev.savedImgs],
         })
     );
+    moveToTop();
   };
 
   return (
