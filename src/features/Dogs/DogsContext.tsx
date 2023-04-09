@@ -22,9 +22,10 @@ interface Props {
 
 export const ContextProvider: React.FC<Props> = ({ children }) => {
   const { response, setResponse, getDogs } = useGetDogs();
+
   const [state, setState] = React.useState<IState>({
     fetch: response,
-    savedImgs: [],
+    savedImgs: JSON.parse(localStorage.getItem("savedImgs") || "[]"),
   });
 
   React.useEffect(() => {
@@ -39,6 +40,10 @@ export const ContextProvider: React.FC<Props> = ({ children }) => {
         })
     );
   }, [response]);
+
+  React.useEffect(() => {
+    localStorage.setItem("savedImgs", JSON.stringify(state.savedImgs));
+  }, [state.savedImgs]);
 
   const addToArray = () => {
     if (state.savedImgs.includes(response.message)) {
@@ -55,10 +60,6 @@ export const ContextProvider: React.FC<Props> = ({ children }) => {
         })
     );
   };
-
-  React.useEffect(() => {
-    localStorage.setItem("savedImgs", JSON.stringify(state.savedImgs));
-  }, [state.savedImgs]);
 
   const getImage = () => {
     getDogs({ setResponse });
