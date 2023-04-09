@@ -4,7 +4,9 @@ import { nanoid } from "nanoid";
 import { HiOutlineHeart } from "react-icons/hi";
 import { Icon } from "../../common/Icon";
 export const SavedImages = () => {
-  const { state, addToArray } = useContext(Context) as TContext;
+  const { state, addToArray, setFetchMessage } = useContext(
+    Context
+  ) as TContext;
   return (
     <section className="m-8">
       <button
@@ -15,11 +17,10 @@ export const SavedImages = () => {
         add to favourite
       </button>
       <div className="grid grid-cols-2 justify-center gap-2 text-center md:grid-cols-3 lg:grid-cols-4">
-        {state.savedImgs.map((element) => (
-          <button>
+        {state.savedImgs.map((element, index) => (
+          <button key={nanoid()} onClick={() => setFetchMessage(index)}>
             <img
               src={element}
-              key={nanoid()}
               className="m-auto h-48 w-64 rounded-lg object-fill md:h-64 lg:w-96"
             />
           </button>
