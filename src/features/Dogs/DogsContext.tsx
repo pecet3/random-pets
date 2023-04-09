@@ -56,6 +56,10 @@ export const ContextProvider: React.FC<Props> = ({ children }) => {
     );
   };
 
+  React.useEffect(() => {
+    localStorage.setItem("savedImgs", JSON.stringify(state.savedImgs));
+  }, [state.savedImgs]);
+
   const getImage = () => {
     getDogs({ setResponse });
   };
