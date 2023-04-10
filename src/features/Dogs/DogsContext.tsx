@@ -6,7 +6,7 @@ export const initialState = {
   savedImgs: [],
 };
 export interface IState {
-  fetch: TResponse | null;
+  fetch: TResponse;
   savedImgs: string[];
 }
 export type TContext = {
@@ -14,6 +14,7 @@ export type TContext = {
   addToArray: () => void;
   getImage: () => void;
   setFetchMessage: (index: number) => void;
+  removeFromList: (index: number) => void;
 };
 
 interface Props {
@@ -83,8 +84,26 @@ export const ContextProvider: React.FC<Props> = ({ children }) => {
     moveToTop();
   };
 
+  const removeFromList = (index: number) => {
+    setState(
+      (prev) =>
+        (prev = {
+          fetch: {
+            message: prev.fetch.message,
+            status: prev.fetch.status,
+          },
+          savedImgs: [
+            ...prev.savedImgs.slice(0, index),
+            ...prev.savedImgs.slice(index + 1),
+          ],
+        })
+    );
+  };
+
   return (
-    <Context.Provider value={{ state, addToArray, getImage, setFetchMessage }}>
+    <Context.Provider
+      value={{ state, addToArray, getImage, setFetchMessage, removeFromList }}
+    >
       {children}
     </Context.Provider>
   );
