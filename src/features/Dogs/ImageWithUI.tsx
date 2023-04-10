@@ -9,8 +9,14 @@ export const ImageWithUI: React.FC = () => {
   return (
     <>
       <ImageAndFilters image={state.fetch ? state.fetch.message : ""} />
-      <RefreshButton action={() => getImage()} petType="Dog" />
-      <AddButton action={() => addToArray()} />
+      <div className="flex items-center justify-center gap-2">
+        <span className="ml-8">
+          <RefreshButton action={() => getImage()} petType="Dog" />
+        </span>
+        <span className="self">
+          <AddButton action={() => addToArray()} />
+        </span>
+      </div>
     </>
   );
 };
