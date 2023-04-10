@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IFetch, TResponse } from "../../common/models";
+import { IFetch, TResponse } from "./models";
 import { useEffect, useState, SetStateAction, Dispatch } from "react";
 
 export const useGetDogs = (): {

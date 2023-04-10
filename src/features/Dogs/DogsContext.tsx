@@ -1,6 +1,6 @@
 import React from "react";
 import { useGetDogs } from "./useGetDogs";
-import { TResponse } from "../../common/models";
+import { TResponse } from "./models";
 export const initialState = {
   fetch: { message: "", status: "" },
   savedImgs: [],
