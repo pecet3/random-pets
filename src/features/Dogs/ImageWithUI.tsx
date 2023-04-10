@@ -1,4 +1,4 @@
-import { RefreshButton } from "../../common/RefreshButton";
+import { RefreshButton } from "../../common/buttons/RefreshButton";
 import { ImageAndFilters } from "../../common/ImageAndFilters";
 import Context, { TContext } from "./DogsContext";
 import { useContext } from "react";
