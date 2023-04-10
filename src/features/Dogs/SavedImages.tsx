@@ -12,7 +12,7 @@ export const SavedImages = () => {
         {state.savedImgs.map((element, index) => (
           <div key={nanoid()} className="relative">
             <button
-              className="absolute right-0 -top-2 rounded-full bg-slate-300 text-2xl text-red-500"
+              className="absolute -right-2 -top-2 rounded-full bg-slate-300 text-2xl text-red-500"
               onClick={() => removeFromList(index)}
             >
               <TiDelete size="28" />
