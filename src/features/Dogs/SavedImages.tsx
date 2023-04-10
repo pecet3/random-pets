@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { nanoid } from "nanoid";
 import { TiDelete } from "react-icons/ti";
 export const SavedImages = () => {
-  const { state, addToArray, setFetchMessage } = useContext(
+  const { state, addToArray, setFetchMessage, removeFromList } = useContext(
     Context
   ) as TContext;
   return (
@@ -13,7 +13,7 @@ export const SavedImages = () => {
           <div key={nanoid()} className="relative">
             <button
               className="absolute right-0 -top-2 rounded-full bg-slate-300 text-2xl text-red-500 xl:right-6"
-              onClick={() => alert(index)}
+              onClick={() => removeFromList(index)}
             >
               <TiDelete size="28" />
             </button>
