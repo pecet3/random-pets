@@ -19,8 +19,8 @@ export const SavedImages = () => {
             </button>
             <button onClick={() => setFetchMessage(index)}>
               <img
-                src={element}
-                className="m-auto h-48 w-64 rounded-lg object-fill md:h-64 lg:w-96"
+                src={element && element}
+                className="m-auto h-48 w-64 rounded-lg object-fill shadow-lg shadow-gray-500 md:h-64 lg:w-96"
               />
             </button>
           </div>
