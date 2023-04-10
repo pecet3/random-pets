@@ -18,18 +18,18 @@ export const SavedImages = () => {
       </button>
       <div className="grid grid-cols-2 justify-center gap-2 text-center md:grid-cols-3 lg:grid-cols-4 ">
         {state.savedImgs.map((element, index) => (
-          <div key={nanoid()} className="">
+          <div key={nanoid()} className="relative">
+            <button
+              className="absolute right-2 top-0 text-2xl text-red-600"
+              onClick={() => alert(index)}
+            >
+              <TiDeleteOutline size="32" />
+            </button>
             <button onClick={() => setFetchMessage(index)}>
               <img
                 src={element}
                 className="m-auto h-48 w-64 rounded-lg object-fill md:h-64 lg:w-96"
               />
-            </button>
-            <button
-              className="relative right-96 bottom-56 text-2xl text-red-600"
-              onClick={() => alert("aaaa")}
-            >
-              <TiDeleteOutline size="32" />
             </button>
           </div>
         ))}
