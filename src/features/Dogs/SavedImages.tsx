@@ -12,15 +12,15 @@ export const SavedImages = () => {
         {state.savedImgs.map((element, index) => (
           <div key={nanoid()} className="relative">
             <button
-              className="absolute right-0 -top-2 rounded-full bg-slate-300 text-2xl text-red-500 xl:right-6"
+              className="absolute right-0 -top-2 rounded-full bg-slate-300 text-2xl text-red-500"
               onClick={() => removeFromList(index)}
             >
               <TiDelete size="28" />
             </button>
             <button onClick={() => setFetchMessage(index)}>
               <img
-                src={element && element}
-                className="m-auto h-48 w-64 rounded-lg object-fill shadow-lg shadow-gray-500 md:h-64 lg:w-96"
+                src={element}
+                className="m-auto h-48 w-64 rounded-lg object-cover shadow-lg shadow-gray-500 md:h-64 lg:h-96 lg:w-144"
               />
             </button>
           </div>
