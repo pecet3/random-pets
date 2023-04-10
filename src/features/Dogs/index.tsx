@@ -1,7 +1,7 @@
 import { Header } from "../../common/Header";
 import { Sidebar } from "../../common/Sidebar";
-import { Error } from "../../common/Error";
-import { Loading } from "../../common/Loading";
+import { Error } from "../../common/notifications/Error";
+import { Loading } from "../../common/notifications/Loading";
 import { MainWrapper } from "../../common/MainWrapper";
 import { useGetDogs } from "./useGetDogs";
 import { ContextProvider } from "./DogsContext";
