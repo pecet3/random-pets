@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon } from "./Icon";
+import { Icon } from "../Icon";
 import { TbRefresh } from "react-icons/tb";
 interface IRefresh {
   action: () => void;
