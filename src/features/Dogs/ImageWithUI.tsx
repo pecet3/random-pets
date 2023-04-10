@@ -13,7 +13,7 @@ export const ImageWithUI: React.FC = () => {
         <span className="ml-8">
           <RefreshButton action={() => getImage()} petType="Dog" />
         </span>
-        <span className="self">
+        <span className="">
           <AddButton action={() => addToArray()} />
         </span>
       </div>

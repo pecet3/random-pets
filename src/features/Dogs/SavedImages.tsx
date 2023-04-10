@@ -7,7 +7,7 @@ export const SavedImages = () => {
     Context
   ) as TContext;
   return (
-    <section className="m-2">
+    <section className="my-6 mx-2">
       <div className="grid grid-cols-2 justify-center gap-2 text-center md:grid-cols-3 lg:grid-cols-4 ">
         {state.savedImgs.map((element, index) => (
           <div key={nanoid()} className="relative">
