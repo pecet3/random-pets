@@ -3,7 +3,7 @@ import { ImageAndFilters } from "../../common/ImageAndFilters";
 import Context, { TContext } from "./DogsContext";
 import { useContext } from "react";
 
-export const Core: React.FC = () => {
+export const ImageWithUI: React.FC = () => {
   const { state, addToArray, getImage } = useContext(Context) as TContext;
   return (
     <>
