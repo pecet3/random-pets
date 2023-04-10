@@ -2,7 +2,7 @@ import Context, { TContext } from "./DogsContext";
 import { useContext } from "react";
 import { nanoid } from "nanoid";
 import { HiOutlineHeart } from "react-icons/hi";
-import { TiDeleteOutline } from "react-icons/ti";
+import { TiDelete } from "react-icons/ti";
 export const SavedImages = () => {
   const { state, addToArray, setFetchMessage } = useContext(
     Context
@@ -20,10 +20,10 @@ export const SavedImages = () => {
         {state.savedImgs.map((element, index) => (
           <div key={nanoid()} className="relative">
             <button
-              className="absolute right-2 top-0 text-2xl text-red-600"
+              className="absolute right-0 -top-2 rounded-full bg-slate-300 text-2xl text-red-500 xl:right-6"
               onClick={() => alert(index)}
             >
-              <TiDeleteOutline size="32" />
+              <TiDelete size="28" />
             </button>
             <button onClick={() => setFetchMessage(index)}>
               <img
