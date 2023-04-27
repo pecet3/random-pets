@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createHashRouter } from "react-router-dom";
-import { Input } from "./common/Input";
+import { About } from "./features/About";
 import { Provider } from "react-redux";
 import { Dogs } from "./features/Dogs";
 import { Cats } from "./features/Cats";
@@ -19,8 +19,8 @@ export const router = createHashRouter([
     element: <Cats />,
   },
   {
-    path: "/input",
-    element: <Input />,
+    path: "/about",
+    element: <About />,
   },
   {
     path: "/",
