@@ -1,7 +1,7 @@
 import React from "react";
 
 interface IHeader {
-  title?: string;
+  title: string;
 }
 
 export const Header: React.FC<IHeader> = ({ title }) => {
@@ -15,7 +15,7 @@ export const Header: React.FC<IHeader> = ({ title }) => {
        tracking-widest text-violet-700 dark:text-pink-500
          lg:text-5xl dark:lg:text-pink-400"
       >
-        {title ? title : "Pets"}
+        {title}
       </h1>
     </header>
   );
