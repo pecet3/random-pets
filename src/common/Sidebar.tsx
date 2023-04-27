@@ -15,7 +15,7 @@ export const Sidebar: React.FC = () => {
         <Link to="/cats" relative="path">
           <Icon icon={<TbCat size="28" />} classes="sidebar-icon" />
         </Link>
-        <Link to="/dogs" relative="path">
+        <Link to="/about" relative="path">
           <Icon icon={<RiInformationFill size="28" />} classes="sidebar-icon" />
         </Link>
         <ToggleThemeButton action={toggleTheme} state={theme} />
