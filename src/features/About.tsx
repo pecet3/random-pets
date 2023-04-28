@@ -7,8 +7,8 @@ export const About: React.FC = () => {
       <Sidebar />
       <section className="mt-20">
         <p>
-          Hello, welcome to site with random photos of Dogs and Cats. If you
-          like some photo, you can add it to favourite list. Enjoy!
+          Welcome to site with random photos of Dogs and Cats. If you like some
+          photo, you can add it to favourite list. Enjoy!
         </p>
       </section>
     </>
