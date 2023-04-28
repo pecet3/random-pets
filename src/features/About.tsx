@@ -6,7 +6,10 @@ export const About: React.FC = () => {
       <Header />
       <Sidebar />
       <section className="mt-20">
-        <p>Hello, this is About section</p>
+        <p>
+          Hello, welcome to site with random photos of Dogs and Cats. If you
+          like some photo, you can add it to favourite list. Enjoy!
+        </p>
       </section>
     </>
   );
