@@ -8,7 +8,7 @@ import { ContextProvider } from "./DogsContext";
 import { SavedImages } from "./SavedImages";
 import { ImageWithUI } from "./ImageWithUI";
 export const Dogs: React.FC = () => {
-  const { response, setResponse, getDogs } = useGetDogs();
+  const { response } = useGetDogs();
   return (
     <ContextProvider>
       <Header title="Random Dogs" />
