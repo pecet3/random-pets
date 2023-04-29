@@ -9,7 +9,7 @@ export interface IState {
   fetch: TResponse;
   savedImgs: string[];
 }
-export type TContext = {
+export type TDogsContext = {
   state: IState;
   addToArray: () => void;
   getImage: () => void;
@@ -109,5 +109,5 @@ export const ContextProvider: React.FC<Props> = ({ children }) => {
   );
 };
 
-const Context = React.createContext<TContext | null>(null);
+const Context = React.createContext<TDogsContext | null>(null);
 export default Context;

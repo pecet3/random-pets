@@ -1,11 +1,13 @@
 import { RefreshButton } from "../../common/buttons/RefreshButton";
 import { ImageAndFilters } from "../../common/ImageAndFilters";
-import Context, { TContext } from "./DogsContext";
+import DogsContext, { TDogsContext } from "./DogsContext";
 import { useContext } from "react";
 import { AddButton } from "../../common/buttons/AddButton";
 
 export const ImageWithUI: React.FC = () => {
-  const { state, addToArray, getImage } = useContext(Context) as TContext;
+  const { state, addToArray, getImage } = useContext(
+    DogsContext
+  ) as TDogsContext;
   return (
     <>
       <ImageAndFilters image={state.fetch ? state.fetch.message : ""} />
